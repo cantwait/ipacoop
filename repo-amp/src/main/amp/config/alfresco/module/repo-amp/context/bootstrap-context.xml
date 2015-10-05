@@ -11,10 +11,8 @@
     <!-- Registration of new models -->
     <bean id="com.ipacoop.dictionaryBootstrap" parent="dictionaryModelBootstrap" depends-on="dictionaryBootstrap">
         <property name="models">
-            <list>
-                <value>alfresco/module/${project.artifactId}/model/content-model.xml</value>
-                <value>alfresco/module/${project.artifactId}/model/workflow-model.xml</value>
-
+            <list>                                
+				<value>alfresco/module/${project.artifactId}/model/ipaWorkflowModel.xml</value>
             </list>
         </property>
     </bean>

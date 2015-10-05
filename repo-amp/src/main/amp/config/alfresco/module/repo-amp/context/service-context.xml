@@ -29,7 +29,32 @@
         <property name="sinceVersion" value="2.0" />
         <property name="appliesFromVersion" value="2.0" />
         <property name="nodeService" ref="NodeService" />
-        <property name="nodeLocatorService" ref="nodeLocatorService" />
+        <property name="nodeLocatorService" ref="nodeLocatorService" />        
+	        
     </bean>
+    
+    <bean id="${project.artifactId}.workflowBootstrap" parent="workflowDeployer">
+	    <property name="workflowDefinitions">
+	        <list>
+	            <props>
+	                <prop key="engineId">activiti</prop>
+	                <prop key="location">alfresco/module/${project.artifactId}/workflows/RegistroCooperativas.bpmn</prop>
+	                <prop key="mimetype">text/xml</prop>
+	                <prop key="redeploy">false</prop>
+	            </props>	           
+	        </list>
+	    </property>
+	    
+	    <property name="models">
+        <list>
+            <value>alfresco/module/${project.artifactId}/model/ipaWorkflowModel.xml</value>
+        </list>
+	    </property>
+	    <property name="labels">
+	        <list>
+	            <value>alfresco.module.${project.artifactId}.messages.ipaWorkflow</value>
+	        </list>
+	    </property>
+	</bean>
     
 </beans>
