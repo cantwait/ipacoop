@@ -24,5 +24,12 @@
     <import resource="classpath:alfresco/module/${project.artifactId}/context/service-context.xml" />
     <import resource="classpath:alfresco/module/${project.artifactId}/context/bootstrap-context.xml" />
 	<import resource="classpath:alfresco/module/${project.artifactId}/context/webscript-context.xml" />
+	
+	<bean id="signCustomBehavior" class="es.keensoft.alfresco.behaviour.CustomBehaviour"
+		init-method="init">
+		<property name="policyComponent" ref="policyComponent" />
+		<property name="nodeService" ref="NodeService" />
+		<property name="versionService" ref="VersionService" />
+	</bean>
 
 </beans>
