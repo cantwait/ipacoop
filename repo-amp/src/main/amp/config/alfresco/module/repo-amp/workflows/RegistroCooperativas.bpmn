@@ -3,15 +3,15 @@
   <process id="registroCooperativas" name="Registro de Cooperativas" isExecutable="true">
     <startEvent id="startevent1" name="Start" activiti:initiator="${initiator.properties.userName}" activiti:formKey="ipawf:submitReceiveDocTask"></startEvent>
     <userTask id="usertask1" name="Recibir Documentación y Distribuir a Técnicos" activiti:assignee="${initiator.properties.userName}" activiti:formKey="ipawf:submitReceiveBossTask"></userTask>
-    <userTask id="usertask2" name="Trabajar Documentación" activiti:assignee="${initiator.properties.userName}" activiti:formKey="ipawf:"></userTask>
+    <userTask id="usertask2" name="Trabajar Documentación" activiti:assignee="${initiator.properties.userName}" activiti:formKey="ipawf:submitWordDocumentation"></userTask>
     <sequenceFlow id="flow2" sourceRef="usertask1" targetRef="usertask2"></sequenceFlow>
-    <userTask id="usertask3" name="Realizar Análisis" activiti:assignee="${initiator.properties.userName}"></userTask>
+    <userTask id="usertask3" name="Realizar Análisis" activiti:assignee="${initiator.properties.userName}" activiti:formKey="ipawf:submitAnalize"></userTask>
     <sequenceFlow id="flow3" sourceRef="usertask2" targetRef="usertask3"></sequenceFlow>
-    <exclusiveGateway id="exclusivegateway1" name="¿Existe estudio de factibilidad?"></exclusiveGateway>
+    <exclusiveGateway id="exclusivegateway1" name="¿Existe estudio de factibilidad?" default="flow6"></exclusiveGateway>
     <sequenceFlow id="flow4" sourceRef="usertask3" targetRef="exclusivegateway1"></sequenceFlow>
     <parallelGateway id="parallelgateway1" name="Parallel Gateway"></parallelGateway>
     <sequenceFlow id="flow5" name="NO" sourceRef="exclusivegateway1" targetRef="parallelgateway1"></sequenceFlow>
-    <userTask id="usertask4" name="Planificar y Revisar Estudio de Factibilidad" activiti:assignee="${initiator.properties.userName}"></userTask>
+    <userTask id="usertask4" name="Planificar y Revisar Estudio de Factibilidad" activiti:assignee="${initiator.properties.userName}" activiti:formKey="ipawf:submitPlanning"></userTask>
     <sequenceFlow id="flow6" name="SI" sourceRef="exclusivegateway1" targetRef="usertask4"></sequenceFlow>
     <sequenceFlow id="flow7" sourceRef="usertask4" targetRef="parallelgateway1"></sequenceFlow>
     <serviceTask id="alfrescoMailtask1" name="Notificar a Dirección Provincial" activiti:class="org.alfresco.repo.workflow.activiti.script.AlfrescoScriptDelegate">
@@ -20,20 +20,44 @@
           <activiti:string><![CDATA[var mail = actions.create("mail");
 mail.execute(bpm_package);]]></activiti:string>
         </activiti:field>
+        <activiti:field name="mail.parameters.to">
+          <activiti:string><![CDATA[meilynlgg@gmail.com]]></activiti:string>
+        </activiti:field>
+        <activiti:field name="mail.parameters.from">
+          <activiti:string><![CDATA[testinnovacion01@gmail.com]]></activiti:string>
+        </activiti:field>
+        <activiti:field name="mail.parameters.subject">
+          <activiti:string><![CDATA[Notificacion de Rechazo]]></activiti:string>
+        </activiti:field>
+        <activiti:field name="mail.parameters.text">
+          <activiti:string><![CDATA[Por medio del presente se le informa que su cooperativa no ha sido registrada por inconsistencia en la documentacion recibida.]]></activiti:string>
+        </activiti:field>
       </extensionElements>
     </serviceTask>
     <sequenceFlow id="flow8" name="NO" sourceRef="parallelgateway1" targetRef="alfrescoMailtask1"></sequenceFlow>
-    <userTask id="usertask5" name="Inscribir Cooperativa " activiti:assignee="${initiator.properties.userName}"></userTask>
+    <userTask id="usertask5" name="Inscribir Cooperativa " activiti:assignee="${initiator.properties.userName}" activiti:formKey="ipawf:submitInscription"></userTask>
     <sequenceFlow id="flow9" name="SI" sourceRef="parallelgateway1" targetRef="usertask5"></sequenceFlow>
-    <userTask id="usertask6" name="Recibir y Firmar en Dirección Ejecutiva" activiti:assignee="${initiator.properties.userName}"></userTask>
+    <userTask id="usertask6" name="Recibir y Firmar en Dirección Ejecutiva" activiti:assignee="${initiator.properties.userName}" activiti:formKey="ipawf:submitSign"></userTask>
     <sequenceFlow id="flow10" sourceRef="usertask5" targetRef="usertask6"></sequenceFlow>
-    <userTask id="usertask7" name="Recibir en Dirección Provincial"></userTask>
+    <userTask id="usertask7" name="Recibir en Dirección Provincial" activiti:assignee="${initiator.properties.userName}" activiti:formKey="ipawf:submitReceiveDirProv"></userTask>
     <sequenceFlow id="flow11" sourceRef="usertask6" targetRef="usertask7"></sequenceFlow>
     <serviceTask id="alfrescoMailtask2" name="Notificar Resolución" activiti:class="org.alfresco.repo.workflow.activiti.script.AlfrescoScriptDelegate">
       <extensionElements>
         <activiti:field name="script">
           <activiti:string><![CDATA[var mail = actions.create("mail");
 mail.execute(bpm_package);]]></activiti:string>
+        </activiti:field>
+        <activiti:field name="mail.parameters.to">
+          <activiti:string><![CDATA[meilynlgg@gmail.com]]></activiti:string>
+        </activiti:field>
+        <activiti:field name="mail.parameters.from">
+          <activiti:string><![CDATA[testinnovacion01@gmail.com]]></activiti:string>
+        </activiti:field>
+        <activiti:field name="mail.parameters.subject">
+          <activiti:string><![CDATA[Notificacion de Resolucion]]></activiti:string>
+        </activiti:field>
+        <activiti:field name="mail.parameters.text">
+          <activiti:string><![CDATA[Por medio del presente se le informa que su cooperativa ha sido registrada y se ha generado la Resolucion respectiva.]]></activiti:string>
         </activiti:field>
       </extensionElements>
     </serviceTask>
@@ -141,7 +165,7 @@ mail.execute(bpm_package);]]></activiti:string>
         <omgdi:waypoint x="590.0" y="361.0"></omgdi:waypoint>
         <omgdi:waypoint x="675.0" y="359.0"></omgdi:waypoint>
         <bpmndi:BPMNLabel>
-          <omgdc:Bounds height="14.0" width="9.0" x="590.0" y="342.0"></omgdc:Bounds>
+          <omgdc:Bounds height="14.0" width="100.0" x="590.0" y="342.0"></omgdc:Bounds>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge bpmnElement="flow10" id="BPMNEdge_flow10">

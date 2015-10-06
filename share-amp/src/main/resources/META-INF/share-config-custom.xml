@@ -77,5 +77,155 @@
          </form>         
       </forms>
    </config>
+   
+   <config evaluator="task-type" condition="ipawf:submitWordDocumentation">
+      <forms>
+         <form>
+            <field-visibility>
+               <show id="message" />
+               <show id="taskOwner" />
+               <show id="packageItems" />
+               <show id="bpm:taskId" />               
+            </field-visibility>
+            <appearance>
+               <set id="" appearance="title" label-id="workflow.set.task.info" />
+               <set id="info" appearance="" template="/org/alfresco/components/form/2-column-set.ftl" />
+               <set id="items" appearance="title" label-id="workflow.set.items" />
+			   <set id="other" appearance="title" label-id="workflow.set.other" />               
+               
+               <field id="taskOwner" set="info" />
+               <field id="packageItems" set="items" />
+               <field id="bpm:taskId" set="info">
+                  <control template="/org/alfresco/components/form/controls/info.ftl" />
+               </field>
+            </appearance>
+         </form>         
+      </forms>
+   </config>
+   
+   <config evaluator="task-type" condition="ipawf:submitAnalize">
+      <forms>
+         <form>
+            <field-visibility>
+               <show id="message" />
+               <show id="taskOwner" />
+               <show id="packageItems" />
+               <show id="bpm:taskId" />               
+            </field-visibility>
+            <appearance>
+               <set id="" appearance="title" label-id="workflow.set.task.info" />
+               <set id="info" appearance="" template="/org/alfresco/components/form/2-column-set.ftl" />
+               <set id="items" appearance="title" label-id="workflow.set.items" />
+			   <set id="other" appearance="title" label-id="workflow.set.other" />               
+               
+               <field id="taskOwner" set="info" />
+               <field id="packageItems" set="items" />
+               <field id="bpm:taskId" set="info">
+                  <control template="/org/alfresco/components/form/controls/info.ftl" />
+               </field>
+            </appearance>
+         </form>         
+      </forms>
+   </config>
+   
+   <config evaluator="task-type" condition="ipawf:submitPlanning">
+      <forms>
+         <form>
+            <field-visibility>
+               <show id="message" />
+               <show id="taskOwner" />
+               <show id="packageItems" />
+               <show id="bpm:taskId" />               
+            </field-visibility>
+            <appearance>
+               <set id="" appearance="title" label-id="workflow.set.task.info" />
+               <set id="info" appearance="" template="/org/alfresco/components/form/2-column-set.ftl" />
+               <set id="items" appearance="title" label-id="workflow.set.items" />
+			   <set id="other" appearance="title" label-id="workflow.set.other" />               
+               
+               <field id="taskOwner" set="info" />
+               <field id="packageItems" set="items" />
+               <field id="bpm:taskId" set="info">
+                  <control template="/org/alfresco/components/form/controls/info.ftl" />
+               </field>
+            </appearance>
+         </form>         
+      </forms>
+   </config>
+   
+   <config evaluator="task-type" condition="ipawf:submitSign">
+      <forms>
+         <form>
+            <field-visibility>
+               <show id="message" />
+               <show id="taskOwner" />
+               <show id="packageItems" />
+               <show id="bpm:taskId" />               
+            </field-visibility>
+            <appearance>
+               <set id="" appearance="title" label-id="workflow.set.task.info" />
+               <set id="info" appearance="" template="/org/alfresco/components/form/2-column-set.ftl" />
+               <set id="items" appearance="title" label-id="workflow.set.items" />
+			   <set id="other" appearance="title" label-id="workflow.set.other" />               
+               
+               <field id="taskOwner" set="info" />
+               <field id="packageItems" set="items" />
+               <field id="bpm:taskId" set="info">
+                  <control template="/org/alfresco/components/form/controls/info.ftl" />
+               </field>
+            </appearance>
+         </form>         
+      </forms>
+   </config>
+   
+   <config evaluator="task-type" condition="ipawf:submitInscription">
+      <forms>
+         <form>
+            <field-visibility>
+               <show id="message" />
+               <show id="taskOwner" />
+               <show id="packageItems" />
+               <show id="bpm:taskId" />               
+            </field-visibility>
+            <appearance>
+               <set id="" appearance="title" label-id="workflow.set.task.info" />
+               <set id="info" appearance="" template="/org/alfresco/components/form/2-column-set.ftl" />
+               <set id="items" appearance="title" label-id="workflow.set.items" />
+			   <set id="other" appearance="title" label-id="workflow.set.other" />               
+               
+               <field id="taskOwner" set="info" />
+               <field id="packageItems" set="items" />
+               <field id="bpm:taskId" set="info">
+                  <control template="/org/alfresco/components/form/controls/info.ftl" />
+               </field>
+            </appearance>
+         </form>         
+      </forms>
+   </config>
+    
+    <config evaluator="task-type" condition="ipawf:submitReceiveDirProv">
+      <forms>
+         <form>
+            <field-visibility>
+               <show id="message" />
+               <show id="taskOwner" />
+               <show id="packageItems" />
+               <show id="bpm:taskId" />               
+            </field-visibility>
+            <appearance>
+               <set id="" appearance="title" label-id="workflow.set.task.info" />
+               <set id="info" appearance="" template="/org/alfresco/components/form/2-column-set.ftl" />
+               <set id="items" appearance="title" label-id="workflow.set.items" />
+			   <set id="other" appearance="title" label-id="workflow.set.other" />               
+               
+               <field id="taskOwner" set="info" />
+               <field id="packageItems" set="items" />
+               <field id="bpm:taskId" set="info">
+                  <control template="/org/alfresco/components/form/controls/info.ftl" />
+               </field>
+            </appearance>
+         </form>         
+      </forms>
+   </config>
     
 </alfresco-config>

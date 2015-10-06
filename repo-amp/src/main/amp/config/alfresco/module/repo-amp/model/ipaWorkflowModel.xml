@@ -33,7 +33,7 @@
         </type>
         
         <type name="ipawf:submitReceiveBossTask">
-        	<parent>ipawf:reviewTask</parent>
+        	<parent>ipawf:approvedTask</parent>
         	<properties>
         		<property name="ipawf:commentBoss">
         			<type>d:text</type>
@@ -44,6 +44,30 @@
         	<mandatory-aspects>
                 <aspect>bpm:assignees</aspect>
             </mandatory-aspects>
+        </type>
+        
+        <type name="ipawf:submitWordDocumentation">
+        	<parent>ipawf:approvedTask</parent>
+        </type>
+        
+        <type name="ipawf:submitAnalize">
+        	<parent>ipawf:approvedTask</parent>
+        </type>
+        
+        <type name="ipawf:submitPlanning">
+        	<parent>ipawf:approvedTask</parent>
+        </type>
+        
+        <type name="ipawf:submitSign">
+        	<parent>ipawf:approvedTask</parent>
+        </type>
+        
+        <type name="ipawf:submitInscription">
+        	<parent>ipawf:approvedTask</parent>
+        </type>
+        
+        <type name="ipawf:submitReceiveDirProv">
+        	<parent>ipawf:approvedTask</parent>
         </type>
         
         <type name="ipawf:reviewTask">
@@ -57,6 +81,14 @@
                     <constraints/>
                 </property>
             </overrides>
+            <mandatory-aspects/>
+        </type>
+        
+        <type name="ipawf:approvedTask">
+            <parent>bpm:workflowTask</parent>
+            <properties/>
+            <associations/>
+            <overrides/>
             <mandatory-aspects/>
         </type>
     </types>
