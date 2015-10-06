@@ -35,13 +35,13 @@ public class DemoPage extends SharePage {
     }
 
     @SuppressWarnings("unchecked")
-    @Override
+    //@Override
     public DemoPage render() {
         return render(new RenderTime(maxPageLoadingTime));
     }
 
     @SuppressWarnings("unchecked")
-    @Override
+    //@Override
     public DemoPage render(RenderTime timer) {
         while (true) {
             timer.start();
@@ -58,7 +58,7 @@ public class DemoPage extends SharePage {
     }
 
     @SuppressWarnings("unchecked")
-    @Override
+    //@Override
     public DemoPage render(long time) {
         return render(new RenderTime(time));
     }

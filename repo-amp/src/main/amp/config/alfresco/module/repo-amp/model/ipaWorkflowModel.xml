@@ -21,8 +21,16 @@
     </namespaces>
 
     <types>
-        <type name="ipawf:submitReceiveDocStart">
-            <parent></parent>
+    
+    	<type name="ipawf:registroCooperativas">
+		   <parent>bpm:startTask</parent>
+		   <properties/>
+            <associations/>
+            <overrides/>
+		</type>
+		
+        <type name="ipawf:submitReceiveDocTask">            
+            <parent>ipawf:registroCooperativas</parent>
             <properties>
                 <property name="ipawf:controlNumber">
                     <type>d:text</type>
@@ -30,10 +38,13 @@
                     <multiple>false</multiple>
                 </property>
             </properties>
+            <mandatory-aspects>
+                <aspect>bpm:assignee</aspect>
+            </mandatory-aspects>
         </type>
         
         <type name="ipawf:submitReceiveBossTask">
-        	<parent>cm:content</parent>
+        	<parent>ipawf:registroCooperativas</parent>
         	<properties>
         		<property name="ipawf:commentBoss">
         			<type>d:text</type>
