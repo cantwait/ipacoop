@@ -6,12 +6,10 @@
          <form>
             <field-visibility>
                <show id="bpm:workflowDescription" />
-               <show id="transitions" />
                
             </field-visibility>
             <appearance>
                <set id="" appearance="title" label-id="workflow.set.general" />
- 			   <set id="progress" appearance="title" label-id="workflow.set.task.progress" />               
                
                <field id="bpm:workflowDescription" label-id="workflow.field.message">
                   <control template="/org/alfresco/components/form/controls/textarea.ftl">
@@ -21,47 +19,33 @@
                
             </appearance>
          </form>
-      </forms>
-    </config>
-    
-    <config evaluator="task-type" condition="ipawf:submitReceiveDocTask">
-      <forms>
          <form>
             <field-visibility>
 					<show id="message" />
-					<show id="taskOwner"></show>	
-					<show id="bpm:taskId"/>				
-					<show id="bpm:assignee" />
-					<show id="bpm:comment" />					
+					<show id="packageItems" />		
 					<show id="ipawf:controlNumber"></show>
 				</field-visibility>
             <appearance>
                <set id="" appearance="title" label-id="workflow.set.general" />
-					<set id="info" appearance="" template="/org/alfresco/components/form/2-column-set.ftl" />
-					<set id="assignee" appearance="title" label-id="workflow.set.assignee" />
+					<set id="items" appearance="title" label-id="workflow.set.items" />
 					<set id="other" appearance="title" label-id="workflow.set.other" />
-					<set id="response" appearance="title" label-id="workflow.set.response" />
  
- 
+					<field id="packageItems" set="items" />
 					<field id="message" label-id="workflow.field.message">
-						<control template="/org/alfresco/components/form/controls/info.ftl" />
-					</field> 
-					<field id="taskOwner" set="info"></field>
-					<field id="bpm:taskId" set="info"/>
- 
-					<field id="bpm:assignee" label-id="workflow.field.assign_to" set="assignee" />
-					<field id="bpm:comment" label-id="workflow.field.comment" set="response">
-						<control template="/org/alfresco/components/form/controls/textarea.ftl" />
-					</field>
-	               <field id="ipawf:controlNumber" set="other">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl">
+							<control-param name="style">width: 95%</control-param>
+						</control>
+					</field>  					
+	               	<field id="ipawf:controlNumber" set="other">
 	               	   <control template="/org/alfresco/components/form/controls/textfield.ftl">
 		                     <control-param name="style">width: 95%</control-param>
 		               </control>
-		           </field>      
+		           	</field>      
             </appearance>
-         </form>         
+         </form>  
       </forms>
-   </config>
+    </config>
+  
    
     <config evaluator="task-type" condition="ipawf:submitReceiveBossTask">
       <forms>
@@ -73,12 +57,13 @@
                <show id="bpm:status" />  
                <show id="ipawf:commentBoss" />
                <show id="ipawf:usersName" />
-               <show id="bpm:assignee" />
+               <show id="bpm:groupAssignee" />
             </field-visibility>
             <appearance>
                <set id="" appearance="title" label-id="workflow.set.task.info" />
                <set id="info" appearance="" template="/org/alfresco/components/form/3-column-set.ftl" />
-               <set id="items" appearance="title" label-id="workflow.set.items" />
+               
+               <set id="assignee" appearance="title" label-id="workflow.set.assignee" />
 			   <set id="other" appearance="title" label-id="workflow.set.other" />               
                
                
@@ -87,13 +72,8 @@
                   <control template="/org/alfresco/components/form/controls/info.ftl" />
                </field>
                <field id="bpm:status" set="info" />
-               <field id="bpm:assignee" label-id="workflow.field.reviewer" set="assignee" />
+               <field id="bpm:groupAssignee" label-id="workflow.field.reviewer" />
                <field id="ipawf:commentBoss" set="other">
-               	   <control template="/org/alfresco/components/form/controls/textfield.ftl">
-	                     <control-param name="style">width: 95%</control-param>
-	               </control>
-               </field>
-               <field id="ipawf:usersName" set="other">
                	   <control template="/org/alfresco/components/form/controls/textfield.ftl">
 	                     <control-param name="style">width: 95%</control-param>
 	               </control>

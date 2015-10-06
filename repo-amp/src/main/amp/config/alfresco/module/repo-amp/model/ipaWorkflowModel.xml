@@ -20,17 +20,9 @@
         <namespace uri="http://www.ipacoop.com/model/workflow/1.0" prefix="ipawf" />
     </namespaces>
 
-    <types>
-    
-    	<type name="ipawf:registroCooperativas">
-		   <parent>bpm:startTask</parent>
-		   <properties/>
-            <associations/>
-            <overrides/>
-		</type>
-		
+    <types>	
         <type name="ipawf:submitReceiveDocTask">            
-            <parent>ipawf:registroCooperativas</parent>
+            <parent>bpm:startTask</parent>
             <properties>
                 <property name="ipawf:controlNumber">
                     <type>d:text</type>
@@ -38,25 +30,20 @@
                     <multiple>false</multiple>
                 </property>
             </properties>
-            <mandatory-aspects>
-                <aspect>bpm:assignee</aspect>
-            </mandatory-aspects>
         </type>
         
         <type name="ipawf:submitReceiveBossTask">
-        	<parent>ipawf:registroCooperativas</parent>
+        	<parent>ipawf:submitReceiveDocTask</parent>
         	<properties>
         		<property name="ipawf:commentBoss">
         			<type>d:text</type>
         			<mandatory>true</mandatory>
         			<multiple>true</multiple>
         		</property>
-        		<property name="ipawf:usersName">
-        			<type>d:text</type>
-        			<mandatory>true</mandatory>
-        			<multiple>true</multiple>
-        		</property>
         	</properties>
+        	<mandatory-aspects>
+                <aspect>bpm:groupAssignee</aspect>
+            </mandatory-aspects>
         </type>
     </types>
 
