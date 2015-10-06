@@ -33,7 +33,7 @@
 	        
     </bean>
     
-    <bean id="${project.artifactId}.workflowBootstrap" parent="workflowDeployer">
+    <bean id="ipacoop-customs.workflowBootstrap" parent="workflowDeployer">
 	    <property name="workflowDefinitions">
 	        <list>
 	            <props>

@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <alfresco-config>
     
+    <config evaluator="string-compare" condition="Workflow" replace="true">
+		<!-- add default for allow all undefine permission workflows -->
+		<permission-workflows default="allow">
+			<permission-workflow name="activiti$registroCooperativas">
+				<authorities>
+					<authority type="group">IPACOOP_GROUP</authority>
+				</authorities>
+			</permission-workflow>
+		</permission-workflows>
+	</config>
+    
     <config evaluator="string-compare" condition="activiti$registroCooperativas">
       <forms>
          <form>
