@@ -33,7 +33,7 @@
         </type>
         
         <type name="ipawf:submitReceiveBossTask">
-        	<parent>ipawf:approvedTask</parent>
+        	<parent>bpm:activitiOutcomeTask</parent>
         	<properties>
         		<property name="ipawf:commentBoss">
         			<type>d:text</type>

@@ -45,14 +45,15 @@
    
     <config evaluator="task-type" condition="ipawf:submitReceiveBossTask">
       <forms>
-         <form>
+         <form >
             <field-visibility>
                <show id="message" />
                <show id="taskOwner" />
                <show id="packageItems" />
                <show id="bpm:taskId" />
                <show id="bpm:assignees" />
-               <show id="ipawf:commentBoss" />               
+               <show id="ipawf:commentBoss" /> 
+               <show id="transitions" />             
             </field-visibility>
             <appearance>
                <set id="" appearance="title" label-id="workflow.set.task.info" />
@@ -60,6 +61,7 @@
                <set id="items" appearance="title" label-id="workflow.set.items" />
                <set id="assignee" appearance="title" label-id="workflow.set.assignee" />
 			   <set id="other" appearance="title" label-id="workflow.set.other" />               
+               <set id="response" appearance="title" label-id="workflow.set.response" />
                
                <field id="taskOwner" set="info" />
                <field id="packageItems" set="items" />
@@ -72,7 +74,7 @@
 	                     <control-param name="style">width: 95%</control-param>
 	               </control>
                </field>
-               
+               <field id="transitions" set="response" />
             </appearance>
          </form>         
       </forms>

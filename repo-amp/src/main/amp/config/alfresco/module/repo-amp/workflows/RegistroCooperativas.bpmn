@@ -138,14 +138,14 @@ mail.execute(bpm_package);]]></activiti:string>
         <omgdi:waypoint x="420.0" y="361.0"></omgdi:waypoint>
         <omgdi:waypoint x="550.0" y="361.0"></omgdi:waypoint>
         <bpmndi:BPMNLabel>
-          <omgdc:Bounds height="14.0" width="15.0" x="420.0" y="361.0"></omgdc:Bounds>
+          <omgdc:Bounds height="14.0" width="100.0" x="420.0" y="361.0"></omgdc:Bounds>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge bpmnElement="flow6" id="BPMNEdge_flow6">
         <omgdi:waypoint x="400.0" y="341.0"></omgdi:waypoint>
         <omgdi:waypoint x="400.0" y="274.0"></omgdi:waypoint>
         <bpmndi:BPMNLabel>
-          <omgdc:Bounds height="14.0" width="9.0" x="390.0" y="319.0"></omgdc:Bounds>
+          <omgdc:Bounds height="14.0" width="100.0" x="390.0" y="319.0"></omgdc:Bounds>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge bpmnElement="flow7" id="BPMNEdge_flow7">
@@ -165,7 +165,7 @@ mail.execute(bpm_package);]]></activiti:string>
         <omgdi:waypoint x="590.0" y="361.0"></omgdi:waypoint>
         <omgdi:waypoint x="675.0" y="359.0"></omgdi:waypoint>
         <bpmndi:BPMNLabel>
-          <omgdc:Bounds height="14.0" width="100.0" x="590.0" y="342.0"></omgdc:Bounds>
+          <omgdc:Bounds height="14.0" width="9.0" x="590.0" y="342.0"></omgdc:Bounds>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge bpmnElement="flow10" id="BPMNEdge_flow10">
