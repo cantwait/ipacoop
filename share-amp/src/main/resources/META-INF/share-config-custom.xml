@@ -34,7 +34,7 @@
    
     <config evaluator="task-type" condition="ipawf:submitReceiveBossTask">
       <forms>
-         <form  id="workflow-details">
+         <form>
             <field-visibility>
                <show id="message" />
                <show id="taskOwner" />

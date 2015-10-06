@@ -3,7 +3,7 @@
   <process id="registroCooperativas" name="Registro de Cooperativas" isExecutable="true">
     <startEvent id="startevent1" name="Start" activiti:initiator="${initiator.properties.userName}" activiti:formKey="ipawf:submitReceiveDocTask"></startEvent>
     <userTask id="usertask1" name="Recibir Documentación y Distribuir a Técnicos" activiti:assignee="${initiator.properties.userName}" activiti:formKey="ipawf:submitReceiveBossTask"></userTask>
-    <userTask id="usertask2" name="Trabajar Documentación" activiti:assignee="${initiator.properties.userName}"></userTask>
+    <userTask id="usertask2" name="Trabajar Documentación" activiti:assignee="${initiator.properties.userName}" activiti:formKey="ipawf:"></userTask>
     <sequenceFlow id="flow2" sourceRef="usertask1" targetRef="usertask2"></sequenceFlow>
     <userTask id="usertask3" name="Realizar Análisis" activiti:assignee="${initiator.properties.userName}"></userTask>
     <sequenceFlow id="flow3" sourceRef="usertask2" targetRef="usertask3"></sequenceFlow>

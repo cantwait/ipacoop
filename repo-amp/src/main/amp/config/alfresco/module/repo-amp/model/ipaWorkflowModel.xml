@@ -12,7 +12,7 @@
     <imports>
         <import uri="http://www.alfresco.org/model/dictionary/1.0" prefix="d" />
         <import uri="http://www.alfresco.org/model/bpm/1.0" prefix="bpm" />
-        <import uri="http://www.alfresco.org/model/content/1.0" prefix="cm"/>        
+        <import uri="http://www.alfresco.org/model/content/1.0" prefix="cm"/>   
     </imports>
 
     <!-- Introduction of new namespaces defined by this model -->
@@ -33,7 +33,7 @@
         </type>
         
         <type name="ipawf:submitReceiveBossTask">
-        	<parent>bpm:workflowTask</parent>
+        	<parent>ipawf:reviewTask</parent>
         	<properties>
         		<property name="ipawf:commentBoss">
         			<type>d:text</type>
@@ -44,6 +44,20 @@
         	<mandatory-aspects>
                 <aspect>bpm:assignees</aspect>
             </mandatory-aspects>
+        </type>
+        
+        <type name="ipawf:reviewTask">
+            <parent>bpm:workflowTask</parent>
+            <properties/>
+            <associations/>
+            <overrides>
+                <property name="bpm:packageItemActionGroup">
+                    <mandatory/>
+                    <default>edit_package_item_actions</default>
+                    <constraints/>
+                </property>
+            </overrides>
+            <mandatory-aspects/>
         </type>
     </types>
 
