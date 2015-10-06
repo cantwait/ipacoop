@@ -5,37 +5,22 @@
       <forms>
          <form>
             <field-visibility>
-               <show id="bpm:workflowDescription" />
-               
-            </field-visibility>
-            <appearance>
-               <set id="" appearance="title" label-id="workflow.set.general" />
-               
-               <field id="bpm:workflowDescription" label-id="workflow.field.message">
-                  <control template="/org/alfresco/components/form/controls/textarea.ftl">
-                     <control-param name="style">width: 95%</control-param>
-                  </control>
-               </field>
-               
-            </appearance>
-         </form>
-         <form>
-            <field-visibility>
-					<show id="message" />
+					<show id="bpm:workflowDescription" />
 					<show id="packageItems" />		
 					<show id="ipawf:controlNumber"></show>
 				</field-visibility>
             <appearance>
-               <set id="" appearance="title" label-id="workflow.set.general" />
+               		<set id="" appearance="title" label-id="workflow.set.general" />
 					<set id="items" appearance="title" label-id="workflow.set.items" />
 					<set id="other" appearance="title" label-id="workflow.set.other" />
  
-					<field id="packageItems" set="items" />
-					<field id="message" label-id="workflow.field.message">
-						<control template="/org/alfresco/components/form/controls/textfield.ftl">
-							<control-param name="style">width: 95%</control-param>
-						</control>
-					</field>  					
+					
+					<field id="bpm:workflowDescription" label-id="workflow.field.message">
+	                  <control template="/org/alfresco/components/form/controls/textarea.ftl">
+	                     <control-param name="style">width: 95%</control-param>
+	                  </control>
+	               </field>  		
+					<field id="packageItems" set="items" />			
 	               	<field id="ipawf:controlNumber" set="other">
 	               	   <control template="/org/alfresco/components/form/controls/textfield.ftl">
 		                     <control-param name="style">width: 95%</control-param>
@@ -49,30 +34,28 @@
    
     <config evaluator="task-type" condition="ipawf:submitReceiveBossTask">
       <forms>
-         <form>
+         <form  id="workflow-details">
             <field-visibility>
                <show id="message" />
                <show id="taskOwner" />
+               <show id="packageItems" />
                <show id="bpm:taskId" />
-               <show id="bpm:status" />  
-               <show id="ipawf:commentBoss" />
-               <show id="ipawf:usersName" />
-               <show id="bpm:groupAssignee" />
+               <show id="bpm:assignees" />
+               <show id="ipawf:commentBoss" />               
             </field-visibility>
             <appearance>
                <set id="" appearance="title" label-id="workflow.set.task.info" />
-               <set id="info" appearance="" template="/org/alfresco/components/form/3-column-set.ftl" />
-               
+               <set id="info" appearance="" template="/org/alfresco/components/form/2-column-set.ftl" />
+               <set id="items" appearance="title" label-id="workflow.set.items" />
                <set id="assignee" appearance="title" label-id="workflow.set.assignee" />
 			   <set id="other" appearance="title" label-id="workflow.set.other" />               
                
-               
                <field id="taskOwner" set="info" />
+               <field id="packageItems" set="items" />
                <field id="bpm:taskId" set="info">
                   <control template="/org/alfresco/components/form/controls/info.ftl" />
                </field>
-               <field id="bpm:status" set="info" />
-               <field id="bpm:groupAssignee" label-id="workflow.field.reviewer" />
+               <field id="bpm:assignees" label-id="workflow.field.reviewer" />
                <field id="ipawf:commentBoss" set="other">
                	   <control template="/org/alfresco/components/form/controls/textfield.ftl">
 	                     <control-param name="style">width: 95%</control-param>

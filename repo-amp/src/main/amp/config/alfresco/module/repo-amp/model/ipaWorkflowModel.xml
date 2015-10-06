@@ -33,7 +33,7 @@
         </type>
         
         <type name="ipawf:submitReceiveBossTask">
-        	<parent>ipawf:submitReceiveDocTask</parent>
+        	<parent>bpm:workflowTask</parent>
         	<properties>
         		<property name="ipawf:commentBoss">
         			<type>d:text</type>
@@ -42,7 +42,7 @@
         		</property>
         	</properties>
         	<mandatory-aspects>
-                <aspect>bpm:groupAssignee</aspect>
+                <aspect>bpm:assignees</aspect>
             </mandatory-aspects>
         </type>
     </types>
