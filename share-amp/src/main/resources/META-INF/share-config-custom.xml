@@ -38,11 +38,14 @@
          <form>
             <field-visibility>
 					<show id="bpm:workflowDescription" />
+					<show id="bpm:dueDate" />
+					<show id="bpm:priority" />
 					<show id="packageItems" />		
 					<show id="ipawf:controlNumber"></show>
 				</field-visibility>
             <appearance>
                		<set id="" appearance="title" label-id="workflow.set.general" />
+               		<set id="info" appearance=""	template="/org/alfresco/components/form/2-column-set.ftl" />
 					<set id="items" appearance="title" label-id="workflow.set.items" />
 					<set id="other" appearance="title" label-id="workflow.set.other" />
  
@@ -51,7 +54,13 @@
 	                  <control template="/org/alfresco/components/form/controls/textarea.ftl">
 	                     <control-param name="style">width: 95%</control-param>
 	                  </control>
-	               </field>  		
+	               </field>  	
+	               <field id="bpm:dueDate" label-id="workflow.field.due">
+	               		<control template="/org/alfresco/components/form/controls/date.ftl"></control>
+	               </field>
+					<field id="bpm:priority" label-id="workflow.field.priority" set="info">
+						<control template="/org/alfresco/components/form/controls/workflow/priority.ftl" />
+					</field>	
 					<field id="packageItems" set="items" />			
 	               	<field id="ipawf:controlNumber" set="other">
 	               	   <control template="/org/alfresco/components/form/controls/textfield.ftl">
@@ -69,6 +78,8 @@
          <form >
             <field-visibility>
                <show id="message" />
+               <show id="bpm:dueDate" />
+			   <show id="bpm:priority" />
                <show id="taskOwner" />
                <show id="packageItems" />
                <show id="bpm:taskId" />
@@ -106,6 +117,8 @@
          <form>
             <field-visibility>
                <show id="message" />
+               <show id="bpm:dueDate" />
+			   <show id="bpm:priority" />
                <show id="taskOwner" />
                <show id="packageItems" />
                <show id="bpm:taskId" />  
@@ -114,11 +127,17 @@
             </field-visibility>
             <appearance>
                <set id="" appearance="title" label-id="workflow.set.task.info" />
-               <set id="info" appearance="" template="/org/alfresco/components/form/3-column-set.ftl" />
+               <set id="info" appearance="" template="/org/alfresco/components/form/4-column-set.ftl" />
                <set id="items" appearance="title" label-id="workflow.set.items" />
 			   <set id="other" appearance="title" label-id="workflow.set.other" />   
 			   <set id="response" appearance="title" label-id="workflow.set.response" />            
                
+               <field id="bpm:dueDate" label-id="workflow.field.due" set="info" />
+				<field id="bpm:priority" label-id="workflow.field.priority"
+					set="info">
+					<control
+						template="/org/alfresco/components/form/controls/workflow/priority.ftl" />
+				</field>
                <field id="taskOwner" set="info" />
                <field id="bpm:taskId" set="info">
                   <control template="/org/alfresco/components/form/controls/info.ftl" />
@@ -140,6 +159,8 @@
          <form>
             <field-visibility>
                <show id="message" />
+               <show id="bpm:dueDate" />
+			   <show id="bpm:priority" />
                <show id="taskOwner" />
                <show id="packageItems" />
                <show id="bpm:taskId" />
@@ -150,11 +171,17 @@
             </field-visibility>
             <appearance>
                <set id="" appearance="title" label-id="workflow.set.task.info" />
-               <set id="info" appearance="" template="/org/alfresco/components/form/3-column-set.ftl" />
+               <set id="info" appearance="" template="/org/alfresco/components/form/4-column-set.ftl" />
                <set id="items" appearance="title" label-id="workflow.set.items" />
 			   <set id="other" appearance="title" label-id="workflow.set.other" />               
                <set id="response" appearance="title" label-id="workflow.set.response" />
                
+               <field id="bpm:dueDate" label-id="workflow.field.due" set="info" />
+				<field id="bpm:priority" label-id="workflow.field.priority"
+					set="info">
+					<control
+						template="/org/alfresco/components/form/controls/workflow/priority.ftl" />
+				</field>
                <field id="taskOwner" set="info" />
                <field id="bpm:taskId" set="info">
                   <control template="/org/alfresco/components/form/controls/info.ftl" />
@@ -177,6 +204,8 @@
          <form>
             <field-visibility>
                <show id="message" />
+               <show id="bpm:dueDate" />
+			   <show id="bpm:priority" />
                <show id="taskOwner" />
                <show id="packageItems" />
                <show id="bpm:taskId" />   
@@ -205,6 +234,8 @@
          <form>
             <field-visibility>
                <show id="message" />
+               <show id="bpm:dueDate" />
+			   <show id="bpm:priority" />
                <show id="taskOwner" />
                <show id="packageItems" />
                <show id="bpm:taskId" />        
@@ -233,6 +264,8 @@
          <form>
             <field-visibility>
                <show id="message" />
+               <show id="bpm:dueDate" />
+			   <show id="bpm:priority" />
                <show id="taskOwner" />
                <show id="packageItems" />
                <show id="bpm:taskId" />               
@@ -258,6 +291,8 @@
          <form>
             <field-visibility>
                <show id="message" />
+               <show id="bpm:dueDate" />
+			   <show id="bpm:priority" />
                <show id="taskOwner" />
                <show id="packageItems" />
                <show id="bpm:taskId" />               
