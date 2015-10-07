@@ -17,7 +17,11 @@
 				<value>alfresco/module/${project.artifactId}/model/ipaWorkflowModel.xml</value>
             </list>
 		</property>
+		<property name="labels">
+	        <list>
+	            <value>alfresco.module.${project.artifactId}.messages.ipaWorkflow</value>
+	        </list>
+	    </property>
 	</bean>
-
 
 </beans>

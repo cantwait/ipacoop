@@ -19,8 +19,29 @@
     <namespaces>
         <namespace uri="http://www.ipacoop.com/model/workflow/1.0" prefix="ipawf" />
     </namespaces>
-
-    <types>	
+    
+    
+	<!-- <aspects>
+	  <aspect name="ipawf:asCommentBoss">
+	     <title>IPACOOP Aspect Comment Boss</title>
+	     <properties>
+	        <property name="ipawf:commentBoss">
+	           <type>d:text</type>
+	        </property>
+	     </properties>
+	  </aspect>
+	  <aspect name="ipawf:asCommentTec">
+	     <title>IPACOOP Aspect Comment Tec</title>
+	     <properties>
+	        <property name="ipawf:commentTec">
+	           <type>d:text</type>
+	        </property>
+	     </properties>
+	  </aspect>
+	</aspects>
+	 -->
+    <types>
+    		
         <type name="ipawf:submitReceiveDocTask">            
             <parent>bpm:startTask</parent>
             <properties>
@@ -36,38 +57,57 @@
         	<parent>bpm:activitiOutcomeTask</parent>
         	<properties>
         		<property name="ipawf:commentBoss">
-        			<type>d:text</type>
-        			<mandatory>true</mandatory>
-        			<multiple>true</multiple>
-        		</property>
+                    <type>d:text</type>
+                    <mandatory>true</mandatory>
+                    <multiple>false</multiple>
+                </property>
         	</properties>
         	<mandatory-aspects>
                 <aspect>bpm:assignees</aspect>
             </mandatory-aspects>
         </type>
         
-        <type name="ipawf:submitWordDocumentation">
-        	<parent>ipawf:approvedTask</parent>
+        <type name="ipawf:submitWorkDocumentation">
+        	<parent>bpm:activitiOutcomeTask</parent>
+        	<properties>
+        		<property name="ipawf:commentTec">
+                    <type>d:text</type>
+                    <mandatory>true</mandatory>
+                    <multiple>false</multiple>
+                </property>
+        	</properties>
+        	
         </type>
         
         <type name="ipawf:submitAnalize">
-        	<parent>ipawf:approvedTask</parent>
+        	<parent>bpm:activitiOutcomeTask</parent>
+        	<properties>
+        		<property name="ipawf:factibility">
+        			<type>d:boolean</type>
+        			<mandatory>false</mandatory>
+        		</property>
+        		<property name="ipawf:correct">
+        			<type>d:boolean</type>
+        			<mandatory>false</mandatory>
+        		</property>
+        	</properties>
+        	
         </type>
         
         <type name="ipawf:submitPlanning">
-        	<parent>ipawf:approvedTask</parent>
+        	<parent>ipawf:submitReceiveBossTask</parent>
         </type>
         
         <type name="ipawf:submitSign">
-        	<parent>ipawf:approvedTask</parent>
+        	<parent>ipawf:submitReceiveBossTask</parent>
         </type>
         
         <type name="ipawf:submitInscription">
-        	<parent>ipawf:approvedTask</parent>
+        	<parent>ipawf:submitReceiveBossTask</parent>
         </type>
         
         <type name="ipawf:submitReceiveDirProv">
-        	<parent>ipawf:approvedTask</parent>
+        	<parent>ipawf:submitReceiveBossTask</parent>
         </type>
         
         <type name="ipawf:reviewTask">
@@ -84,13 +124,6 @@
             <mandatory-aspects/>
         </type>
         
-        <type name="ipawf:approvedTask">
-            <parent>bpm:workflowTask</parent>
-            <properties/>
-            <associations/>
-            <overrides/>
-            <mandatory-aspects/>
-        </type>
+        
     </types>
-
 </model>
