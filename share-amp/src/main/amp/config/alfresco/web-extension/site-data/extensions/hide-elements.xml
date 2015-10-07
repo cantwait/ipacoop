@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension>
+    <modules>
+        <module>
+            <id>Hide Elements Module</id>
+            <components>
+                <component>
+                    <scope>global</scope>
+                    <region-id>footer</region-id>
+                    <source-id>global</source-id>
+                    <sub-components>
+                        <sub-component id="default">
+                            <url>/ipacoop/components/hide-footer</url>
+                        </sub-component>
+                    </sub-components>
+                </component>
+                <!--  component>
+                    <scope>global</scope>
+                    <region-id>header</region-id>
+                    <source-id>global</source-id>
+                    <sub-components>
+                        <sub-component id="default">
+                            <url>/ipacoop/components/hide-header</url>
+                        </sub-component>
+                    </sub-components>
+                </component-->
+            </components>
+            <customizations>
+                <customization>
+                    <targetPackageRoot>org.alfresco.components</targetPackageRoot>
+                    <sourcePackageRoot>com.ipacoop.components</sourcePackageRoot>
+                </customization>
+            </customizations>
+            <auto-deploy>true</auto-deploy>
+        </module>
+    </modules>
+</extension>
