@@ -95,19 +95,47 @@
         </type>
         
         <type name="ipawf:submitPlanning">
-        	<parent>ipawf:submitReceiveBossTask</parent>
+        	<parent>bpm:activitiOutcomeTask</parent>
+        	<properties>
+        		<property name="ipawf:commentPlanee">
+                    <type>d:text</type>
+                    <mandatory>false</mandatory>
+                    <multiple>false</multiple>
+                </property>
+        	</properties>
         </type>
         
         <type name="ipawf:submitSign">
-        	<parent>ipawf:submitReceiveBossTask</parent>
+        	<parent>bpm:activitiOutcomeTask</parent>
+        	<property name="ipawf:commentSign">
+                <type>d:text</type>
+                <mandatory>false</mandatory>
+                <multiple>false</multiple>
+            </property>
         </type>
         
         <type name="ipawf:submitInscription">
-        	<parent>ipawf:submitReceiveBossTask</parent>
+        	<parent>bpm:activitiOutcomeTask</parent>
+        	<property name="ipawf:nameCoop">
+                <type>d:text</type>
+                <mandatory>true</mandatory>
+            </property>
+            <property name="ipawf:rucCoop">
+                <type>d:text</type>
+                <mandatory>true</mandatory>
+            </property>        	
+            <property name="ipawf:repCoop">
+                <type>d:text</type>
+                <mandatory>true</mandatory>
+            </property>
         </type>
         
         <type name="ipawf:submitReceiveDirProv">
-        	<parent>ipawf:submitReceiveBossTask</parent>
+        	<parent>bpm:activitiOutcomeTask</parent>
+        	<property name="ipawf:commentDirProv">
+                <type>d:text</type>
+                <mandatory>true</mandatory>
+            </property>
         </type>
         
         <type name="ipawf:reviewTask">
