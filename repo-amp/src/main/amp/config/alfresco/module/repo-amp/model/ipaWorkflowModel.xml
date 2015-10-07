@@ -107,15 +107,18 @@
         
         <type name="ipawf:submitSign">
         	<parent>bpm:activitiOutcomeTask</parent>
+        	<properties>
         	<property name="ipawf:commentSign">
                 <type>d:text</type>
                 <mandatory>false</mandatory>
                 <multiple>false</multiple>
             </property>
+            </properties>
         </type>
         
         <type name="ipawf:submitInscription">
         	<parent>bpm:activitiOutcomeTask</parent>
+        	<properties>
         	<property name="ipawf:nameCoop">
                 <type>d:text</type>
                 <mandatory>true</mandatory>
@@ -128,14 +131,17 @@
                 <type>d:text</type>
                 <mandatory>true</mandatory>
             </property>
+            </properties>
         </type>
         
         <type name="ipawf:submitReceiveDirProv">
         	<parent>bpm:activitiOutcomeTask</parent>
+        	<properties>
         	<property name="ipawf:commentDirProv">
                 <type>d:text</type>
                 <mandatory>true</mandatory>
             </property>
+            </properties>
         </type>
         
         <type name="ipawf:reviewTask">
