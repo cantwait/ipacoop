@@ -9,7 +9,7 @@ package com.ipacoop.demoamp;
 public class Demo
 {
 	public void init()
-	{
+	{ 
 		System.out.println("SDK Demo AMP class has been loaded");
 	}
 }
