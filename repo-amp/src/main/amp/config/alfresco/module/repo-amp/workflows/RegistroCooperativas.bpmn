@@ -3,7 +3,7 @@
   <process id="registroCooperativas" name="Registro de Cooperativas" isExecutable="true">
     <startEvent id="startevent1" name="Start" activiti:initiator="${initiator.properties.userName}" activiti:formKey="ipawf:submitReceiveDocTask"></startEvent>
     <userTask id="usertask1" name="Recibir Documentación y Distribuir a Técnicos" activiti:assignee="${initiator.properties.userName}" activiti:formKey="ipawf:submitReceiveBossTask"></userTask>
-    <userTask id="usertask2" name="Trabajar Documentación" activiti:assignee="${initiator.properties.userName}" activiti:formKey="ipawf:submitWordDocumentation"></userTask>
+    <userTask id="usertask2" name="Trabajar Documentación" activiti:assignee="${initiator.properties.userName}" activiti:formKey="ipawf:submitWorkDocumentation"></userTask>
     <sequenceFlow id="flow2" sourceRef="usertask1" targetRef="usertask2"></sequenceFlow>
     <userTask id="usertask3" name="Realizar Análisis" activiti:assignee="${initiator.properties.userName}" activiti:formKey="ipawf:submitAnalize"></userTask>
     <sequenceFlow id="flow3" sourceRef="usertask2" targetRef="usertask3"></sequenceFlow>
@@ -138,14 +138,14 @@ mail.execute(bpm_package);]]></activiti:string>
         <omgdi:waypoint x="420.0" y="361.0"></omgdi:waypoint>
         <omgdi:waypoint x="550.0" y="361.0"></omgdi:waypoint>
         <bpmndi:BPMNLabel>
-          <omgdc:Bounds height="14.0" width="100.0" x="420.0" y="361.0"></omgdc:Bounds>
+          <omgdc:Bounds height="14.0" width="15.0" x="420.0" y="361.0"></omgdc:Bounds>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge bpmnElement="flow6" id="BPMNEdge_flow6">
         <omgdi:waypoint x="400.0" y="341.0"></omgdi:waypoint>
         <omgdi:waypoint x="400.0" y="274.0"></omgdi:waypoint>
         <bpmndi:BPMNLabel>
-          <omgdc:Bounds height="14.0" width="100.0" x="390.0" y="319.0"></omgdc:Bounds>
+          <omgdc:Bounds height="14.0" width="9.0" x="390.0" y="319.0"></omgdc:Bounds>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge bpmnElement="flow7" id="BPMNEdge_flow7">
